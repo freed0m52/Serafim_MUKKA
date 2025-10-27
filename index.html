@@ -3,85 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио - Главная</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Aikko - Официальный сайт</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/custom.css">
 </head>
-<body>
-    <div class="page-container">
-        <header class="header">
-            <h1>🚀 Digital Портфолио</h1>
-            <p>Иванов Иван - Веб-разработчик</p>
-        </header>
+<body class="bg-dark text-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-teal fw-bold" href="index.html">AIKKO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/music.html">Музыка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/gallery.html">Галерея</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/concerts.html">Концерты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li> 
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
+    <!-- Hero Section -->
+    <section class="hero-section min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-3 fw-bold mb-4">AIKKO</h1>
+                    <p class="lead mb-4 text-teal">Aikko не относит себя к жанру рэпа и считает, что границы направлений в искусстве давно размыты. Тексты его треков запомнились слушателям своей откровенностью и отсутствием «замыленных» тем про наркотики, деньги и алкоголь. </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="pages/music.html" class="btn btn-teal btn-lg">Слушать музыку</a>
+                        <a href="#about" class="btn btn-outline-teal btn-lg">Узнать больше</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="images/aikko-main.jpg" alt="Vlad Aikko" class="img-fluid rounded hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <main class="content">
-            <article class="profile-header card-3d">
-                <h1 class="profile-title">👋 Привет, я Иван</h1>
-                <img class="profile-photo" src="images/photo.png" alt="Фото автора">
-                <h2 class="profile-name">Иванов Иван Иванович</h2>
-                <p class="profile-group">Фронтенд-разработчик • ЭФБО-00-00</p>
-                <div class="social-links">
-                    <button class="social-btn">GitHub</button>
-                    <button class="social-btn">Telegram</button>
-                    <button class="social-btn">LinkedIn</button>
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">О музыканте</h2>
+                    <p class="lead mb-5">Настоящее имя рэпера — Владислав Кособуцкий, он родился 14 ноября 1993 года в Беларуси, в городе Бобруйске. Подробностей биографии исполнителя немного. Судя по тому, что первые треки появились в Сети давно, можно предположить, что парень увлекается музыкой с детства.
+                    <div class="row mt-5">
+                        <div class="col-md-4 mb-4">
+                            <div class="card bg-dark border-teal h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-mic display-4 text-teal mb-3"></i>
+                                    <h5>Уникальный вокал</h5>
+                                    <p class="text-secondary">Узнаваемый тембр и эмоциональная подача</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card bg-dark border-teal h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-pencil display-4 text-teal mb-3"></i>
+                                    <h5>Глубокие тексты</h5>
+                                    <p class="text-secondary">Искренние истории и философские размышления</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card bg-dark border-teal h-100">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-music-note-beamed display-4 text-teal mb-3"></i>
+                                    <h5>Атмосферный саунд</h5>
+                                    <p class="text-secondary">Меланхоличные биты и запоминающиеся аранжировки</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </article>
-            
-            <section class="about-me card-3d">
-                <h2>📖 Обо мне</h2>
-                <p>Занимаюсь веб-разработкой более 3 лет. Специализируюсь на создании современных, адаптивных и быстрых веб-приложений. Люблю чистый код, красивый дизайн и сложные задачи.</p>
-                <p>В свободное время изучаю новые технологии,contributing в open-source проекты и фотографирую.</p>
-            </section>
-            
-            <section class="skills-container card-3d">
-                <h2>💪 Мои навыки</h2>
-                <div class="skills-grid">
-                    <div class="skill-tag">HTML5/CSS3</div>
-                    <div class="skill-tag">JavaScript</div>
-                    <div class="skill-tag">React</div>
-                    <div class="skill-tag">Vue.js</div>
-                    <div class="skill-tag">Node.js</div>
-                    <div class="skill-tag">Python</div>
-                    <div class="skill-tag">UI/UX Design</div>
-                    <div class="skill-tag">Git</div>
-                </div>
-            </section>
-            
-            <section class="experience-section">
-                <h2 class="section-title">💼 Мой опыт работы</h2>
-                <div class="experience-grid">
-                    <article class="experience-card card-3d">
-                        <h3 class="experience-title">Senior Frontend Dev</h3>
-                        <p class="experience-company">TechCorp • 2022-н.в.</p>
-                        <p class="experience-desc">Разработка высоконагруженных SPA-приложений, менторство junior-разработчиков</p>
-                    </article>
-                    <article class="experience-card card-3d">
-                        <h3 class="experience-title">Web Developer</h3>
-                        <p class="experience-company">DigitalAgency • 2020-2022</p>
-                        <p class="experience-desc">Создание корпоративных сайтов и интернет-магазинов на React и Vue</p>
-                    </article>
-                    <article class="experience-card card-3d">
-                        <h3 class="experience-title">Junior Developer</h3>
-                        <p class="experience-company">StartUp Inc • 2019-2020</p>
-                        <p class="experience-desc">Верстка лендингов, работа с WordPress, поддержка существующих проектов</p>
-                    </article>
-                </div>
-            </section>
-        </main>
+            </div>
+        </div>
+    </section>
 
-        <footer class="footer">
-            <p>© 2024 Digital Портфолио. Все права защищены.</p>
-            <p>Сделано с ❤️ и литрами кофе</p>
-        </footer>    
-    </div>
+    <!-- Latest Albums -->
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="text-center mb-5">Популярные релизы</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card bg-black text-light h-100 album-card">
+                        <img src="images/album-bekrums.jpg" class="card-img-top" alt="Бэкрумс">
+                        <div class="card-body">
+                            <h5 class="card-title">Бэкрумс</h5>
+                            <p class="card-text text-teal">2025 • Альбом</p>
+                            <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Бэкрумс')">Слушать</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-black text-light h-100 album-card">
+                        <img src="images/album-podvoh.jpg" class="card-img-top" alt="Подвох">
+                        <div class="card-body">
+                            <h5 class="card-title">Подвох</h5>
+                            <p class="card-text text-teal">2023 • Альбом</p>
+                            <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Подвох')">Слушать</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-black text-light h-100 album-card">
+                        <img src="images/album-predannye.jpg" class="card-img-top" alt="Преданные">
+                        <div class="card-body">
+                            <h5 class="card-title">Преданные</h5>
+                            <p class="card-text text-teal">2023 • Альбом</p>
+                            <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Преданные')">Слушать</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-black text-light h-100 album-card">
+                        <img src="images/album-temnye-delishki.jpg" class="card-img-top" alt="Тёмные делишки">
+                        <div class="card-body">
+                            <h5 class="card-title">Тёмные делишки</h5>
+                            <p class="card-text text-teal">2021 • Альбом</p>
+                            <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Тёмные делишки')">Слушать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="pages/music.html" class="btn btn-outline-teal">Все релизы</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-4 border-top border-teal">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-secondary">&copy; 2024 Vlad Aikko. Все права защищены.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="pages/contacts.html" class="text-teal text-decoration-none me-3">Контакты</a>
+                    <a href="#" class="text-teal text-decoration-none">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function playAlbum(albumName) {
+            alert('Воспроизведение альбома: ' + albumName + '\n\nВ реальном сайте здесь будет подключен музыкальный плеер');
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыка - Aikko</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/custom.css">
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-teal fw-bold" href="../index.html">AIKKO</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="music.html">Музыка</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Галерея</a></li>
+                    <li class="nav-item"><a class="nav-link" href="concerts.html">Концерты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5 mt-5">
+        <h1 class="text-center mb-5">Дискография</h1>
+        
+        <!-- All Albums Grid -->
+        <div class="row g-4">
+            <!-- Album 1 -->
+            <div class="col-md-3 col-sm-6" id="bekrums">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-bekrums.jpg" class="card-img-top" alt="Бэкрумс">
+                    <div class="card-body">
+                        <h5 class="card-title">Бэкрумс</h5>
+                        <p class="card-text text-teal">2025 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Бэкрумс', 'bekrums')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Album 2 -->
+            <div class="col-md-3 col-sm-6" id="podvoh">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-podvoh.jpg" class="card-img-top" alt="Подвох">
+                    <div class="card-body">
+                        <h5 class="card-title">Подвох</h5>
+                        <p class="card-text text-teal">2023 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Подвох', 'podvoh')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 3 -->
+            <div class="col-md-3 col-sm-6" id="predannye">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-predannye.jpg" class="card-img-top" alt="Преданные">
+                    <div class="card-body">
+                        <h5 class="card-title">Преданные</h5>
+                        <p class="card-text text-teal">2023 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Преданные', 'predannye')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 4 -->
+            <div class="col-md-3 col-sm-6" id="akustika">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-akustika.jpg" class="card-img-top" alt="Акустика">
+                    <div class="card-body">
+                        <h5 class="card-title">Сборник акустических песен</h5>
+                        <p class="card-text text-teal">2022 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Акустика', 'akustika')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 5 -->
+            <div class="col-md-3 col-sm-6" id="temnye-delishki">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-temnye-delishki.jpg" class="card-img-top" alt="Тёмные делишки">
+                    <div class="card-body">
+                        <h5 class="card-title">Тёмные делишки</h5>
+                        <p class="card-text text-teal">2021 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Тёмные делишки', 'temnye-delishki')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 6 -->
+            <div class="col-md-3 col-sm-6" id="druzya">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-druzya.jpg" class="card-img-top" alt="Мои друзья не должны умирать">
+                    <div class="card-body">
+                        <h5 class="card-title">Мои друзья не должны умирать</h5>
+                        <p class="card-text text-teal">2020 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Мои друзья не должны умирать', 'druzya')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 7 -->
+            <div class="col-md-3 col-sm-6" id="chervi">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-chervi.jpg" class="card-img-top" alt="Черви в черепе">
+                    <div class="card-body">
+                        <h5 class="card-title">Черви в черепе</h5>
+                        <p class="card-text text-teal">2019 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Черви в черепе', 'chervi')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 8 -->
+            <div class="col-md-3 col-sm-6" id="ne-navsegda">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-ne-navsegda.jpg" class="card-img-top" alt="Не навсегда">
+                    <div class="card-body">
+                        <h5 class="card-title">Не навсегда</h5>
+                        <p class="card-text text-teal">2019 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Не навсегда', 'ne-navsegda')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 9 -->
+            <div class="col-md-3 col-sm-6" id="fiktsionalizm">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-fiktsionalizm.jpg" class="card-img-top" alt="Фикционализм">
+                    <div class="card-body">
+                        <h5 class="card-title">Фикционализм</h5>
+                        <p class="card-text text-teal">2018 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Фикционализм', 'fiktsionalizm')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 10 -->
+            <div class="col-md-3 col-sm-6" id="tebe-prikolno">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-tebe-prikolno.jpg" class="card-img-top" alt="Тебе прикольно ещё жить">
+                    <div class="card-body">
+                        <h5 class="card-title">Тебе прикольно ещё жить</h5>
+                        <p class="card-text text-teal">2018 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Тебе прикольно ещё жить', 'tebe-prikolno')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 11 -->
+            <div class="col-md-3 col-sm-6" id="boyus-ostyt">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-boyus-ostyt.jpg" class="card-img-top" alt="Боюсь остыть">
+                    <div class="card-body">
+                        <h5 class="card-title">Боюсь остыть</h5>
+                        <p class="card-text text-teal">2018 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Боюсь остыть', 'boyus-ostyt')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 12 -->
+            <div class="col-md-3 col-sm-6" id="gori">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-gori.jpg" class="card-img-top" alt="Гори">
+                    <div class="card-body">
+                        <h5 class="card-title">Гори</h5>
+                        <p class="card-text text-teal">2017 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Гори', 'gori')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 13 -->
+            <div class="col-md-3 col-sm-6" id="delayu-lyubov">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-delayu-lyubov.jpg" class="card-img-top" alt="Делаю любовь">
+                    <div class="card-body">
+                        <h5 class="card-title">Делаю любовь</h5>
+                        <p class="card-text text-teal">2017 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Делаю любовь', 'delayu-lyubov')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album 14 -->
+            <div class="col-md-3 col-sm-6" id="konfetti">
+                <div class="card bg-black text-light h-100 album-card">
+                    <img src="../images/album-konfetti.jpg" class="card-img-top" alt="Конфетти">
+                    <div class="card-body">
+                        <h5 class="card-title">Конфетти</h5>
+                        <p class="card-text text-teal">2015 • Альбом</p>
+                        <button class="btn btn-teal btn-sm w-100" onclick="playAlbum('Конфетти', 'konfetti')">Слушать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music Player Section -->
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card bg-black border-teal">
+                    <div class="card-body">
+                        <h4 class="card-title">Музыкальный плеер</h4>
+                        <div class="music-player bg-dark p-4 rounded">
+                            <div class="text-center mb-4">
+                                <h5 id="nowPlaying">Выберите альбом для прослушивания</h5>
+                                <p class="text-teal" id="albumInfo"></p>
+                            </div>
+                            <audio id="audioPlayer" controls style="width: 100%;" class="mb-3">
+                                Ваш браузер не поддерживает аудио элементы.
+                            </audio>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <button class="btn btn-teal" id="playButton" onclick="togglePlay()">
+                                    <i class="bi bi-play-fill"></i> Воспроизвести
+                                </button>
+                                <div class="text-teal">
+                                    <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentAudio = document.getElementById('audioPlayer');
+        let isPlaying = false;
+
+        // Объект с реальными длительностями треков (замени на реальные)
+        const trackDurations = {
+            'bekrums': 183,
+            'podvoh': 156,
+            'predannye': 174,
+            'akustika': 198,
+            'temnye-delishki': 167,
+            'druzya': 189,
+            'chervi': 145,
+            'ne-navsegda': 162,
+            'fiktsionalizm': 176,
+            'tebe-prikolno': 153,
+            'boyus-ostyt': 148,
+            'gori': 142,
+            'delayu-lyubov': 139,
+            'konfetti': 151
+        };
+
+        function playAlbum(albumName, audioFile) {
+            // Останавливаем предыдущее воспроизведение
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            
+            // Устанавливаем источник аудио
+            const audioPath = `../music/${audioFile}.mp3`;
+            currentAudio.src = audioPath;
+            
+            document.getElementById('nowPlaying').textContent = 'Сейчас играет: ' + albumName;
+            document.getElementById('albumInfo').textContent = 'Загрузка трека...';
+            
+            // Устанавливаем общее время
+            const duration = trackDurations[audioFile] || 180;
+            const minutes = Math.floor(duration / 60);
+            const seconds = duration % 60;
+            document.getElementById('totalTime').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('currentTime').textContent = '0:00';
+
+            // Обновляем кнопку
+            const playButton = document.getElementById('playButton');
+            playButton.innerHTML = '<i class="bi bi-play-fill"></i> Воспроизвести';
+            playButton.classList.remove('btn-danger');
+            playButton.classList.add('btn-teal');
+            
+            isPlaying = false;
+            document.getElementById('albumInfo').textContent = 'Готов к воспроизведению';
+        }
+
+        function togglePlay() {
+            if (!currentAudio.src) {
+                alert('Сначала выберите альбом для прослушивания');
+                return;
+            }
+
+            const playButton = document.getElementById('playButton');
+            
+            if (!isPlaying) {
+                // Запускаем воспроизведение
+                currentAudio.play().then(() => {
+                    playButton.innerHTML = '<i class="bi bi-pause-fill"></i> Пауза';
+                    playButton.classList.remove('btn-teal');
+                    playButton.classList.add('btn-danger');
+                    document.getElementById('albumInfo').textContent = 'Идёт воспроизведение...';
+                    isPlaying = true;
+                }).catch(error => {
+                    console.error('Ошибка воспроизведения:', error);
+                    alert('Ошибка при воспроизведении трека. Проверьте файл.');
+                });
+            } else {
+                // Пауза
+                currentAudio.pause();
+                playButton.innerHTML = '<i class="bi bi-play-fill"></i> Продолжить';
+                playButton.classList.remove('btn-danger');
+                playButton.classList.add('btn-teal');
+                document.getElementById('albumInfo').textContent = 'На паузе';
+                isPlaying = false;
+            }
+        }
+
+        // Обновление времени воспроизведения
+        currentAudio.addEventListener('timeupdate', function() {
+            const currentTime = formatTime(currentAudio.currentTime);
+            const duration = formatTime(currentAudio.duration);
+            
+            document.getElementById('currentTime').textContent = currentTime;
+            document.getElementById('totalTime').textContent = duration;
+            
+            // Обновление прогресс-бара
+            const progress = (currentAudio.currentTime / currentAudio.duration) * 100;
+            if (!isNaN(progress)) {
+                document.querySelector('.progress-bar').style.width = progress + '%';
+            }
+        });
+
+        // Когда трек закончился
+        currentAudio.addEventListener('ended', function() {
+            isPlaying = false;
+            const playButton = document.getElementById('playButton');
+            playButton.innerHTML = '<i class="bi bi-play-fill"></i> Воспроизвести';
+            playButton.classList.remove('btn-danger');
+            playButton.classList.add('btn-teal');
+            document.getElementById('albumInfo').textContent = 'Воспроизведение завершено';
+        });
+
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec.toString().padStart(2, '0')}`;
+        }
+
+        // Обработка ошибок загрузки
+        currentAudio.addEventListener('error', function() {
+            console.error('Ошибка загрузки аудио:', currentAudio.error);
+            document.getElementById('albumInfo').textContent = 'Ошибка загрузки трека';
+        });
+    </script>
+</body>
+</html>
