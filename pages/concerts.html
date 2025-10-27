@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Концерты - Vlad Aikko</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/custom.css">
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container">
+            <a class="navbar-brand text-teal fw-bold" href="../index.html">AIKKO</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="music.html">Музыка</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Галерея</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="concerts.html">Концерты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5 mt-5">
+        <h1 class="text-center mb-5">Концерты</h1>
+        
+        <!-- Upcoming Concerts -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="mb-4 border-bottom border-teal pb-2">Ближайшие выступления</h3>
+            </div>
+            
+            <!-- Concert 1 -->
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-black text-light border-teal h-100">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-3 text-center">
+                                <div class="bg-teal text-dark rounded p-2">
+                                    <div class="fw-bold fs-5">15</div>
+                                    <div class="small">ДЕКАБРЯ</div>
+                                    <div class="small">2024</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="card-title">Москва</h5>
+                                <p class="card-text text-teal">Клуб "16 Тонн"</p>
+                                <small class="text-secondary">Начало в 20:00</small>
+                            </div>
+                            <div class="col-3 text-end">
+                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Москва')">Купить билет</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Concert 2 -->
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-black text-light border-teal h-100">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-3 text-center">
+                                <div class="bg-teal text-dark rounded p-2">
+                                    <div class="fw-bold fs-5">22</div>
+                                    <div class="small">ДЕКАБРЯ</div>
+                                    <div class="small">2024</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="card-title">Санкт-Петербург</h5>
+                                <p class="card-text text-teal">Клуб "МОД"</p>
+                                <small class="text-secondary">Начало в 19:30</small>
+                            </div>
+                            <div class="col-3 text-end">
+                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Санкт-Петербург')">Купить билет</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more concerts... -->
+        </div>
+
+        <!-- Past Concerts -->
+        <div class="row">
+            <div class="col-12">
+                <h3 class="mb-4 border-bottom border-teal pb-2">Прошедшие концерты</h3>
+            </div>
+            
+            <!-- Past Concert 1 -->
+            <div class="col-md-4 mb-3">
+                <div class="card bg-black text-light border-secondary h-100">
+                    <div class="card-body text-center">
+                        <h6>10 НОЯБРЯ 2024</h6>
+                        <p class="text-teal">Екатеринбург</p>
+                        <p class="text-secondary small">Клуб "Tele-Club"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Past Concert 2 -->
+            <div class="col-md-4 mb-3">
+                <div class="card bg-black text-light border-secondary h-100">
+                    <div class="card-body text-center">
+                        <h6>25 ОКТЯБРЯ 2024</h6>
+                        <p class="text-teal">Новосибирск</p>
+                        <p class="text-secondary small">Клуб "Рок-Сити"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more past concerts... -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function buyTicket(city) {
+            alert('Покупка билета на концерт в ' + city + '\n\nВ реальном сайте здесь будет переход на страницу покупки билетов');
+        }
+    </script>
+</body>
+</html>

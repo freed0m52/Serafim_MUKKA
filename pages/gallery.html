@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея - Vlad Aikko</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/custom.css">
+    <style>
+        body {
+            background: #000000 !important;
+        }
+        
+        .lyrics-container {
+            position: relative;
+            min-height: 100vh;
+            padding: 80px 0 50px 0;
+            background: #000000;
+        }
+        
+        .lyric-line {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin: 0.8rem 0;
+            transition: all 0.3s ease;
+            position: relative;
+            color: white;
+            line-height: 1.2;
+            padding: 8px 15px;
+            opacity: 1 !important;
+        }
+        
+        .lyric-line.active {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: white !important;
+            transform: scale(1.01);
+            text-shadow: 0 0 10px rgba(32, 201, 151, 0.7);
+        }
+        
+        .lyric-line.faded {
+            opacity: 0.6 !important;
+        }
+        
+        .gallery-image {
+            border-radius: 8px;
+            opacity: 0.9;
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            position: absolute;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        
+        /* Убрана анимация при наведении */
+        .gallery-image:hover {
+            opacity: 1;
+            /* transform: scale(1.03); - УБРАНО */
+            /* box-shadow: 0 6px 20px rgba(32, 201, 151, 0.3); - УБРАНО */
+        }
+
+        .song-title {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 1.3rem;
+            color: white;
+            background: rgba(0,0,0,0.95);
+            padding: 10px;
+            z-index: 1000;
+            font-weight: 500;
+            border-bottom: 1px solid #20c997;
+        }
+
+        .song-ending {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: white;
+            background: rgba(0,0,0,0.95);
+            padding: 10px;
+            z-index: 1000;
+            border-top: 1px solid #20c997;
+        }
+
+        /* Компактное расположение */
+        .lyric-with-image {
+            position: relative;
+            min-height: 50px;
+            margin: 0.5rem 0;
+            padding: 0 10%;
+        }
+
+        .lyric-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .image-left {
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .image-right {
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Анимации для плавного появления */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .lyric-with-image {
+            animation: fadeInUp 0.4s ease-out;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .lyric-line {
+                font-size: 1.2rem;
+                margin: 0.6rem 0;
+                padding: 6px 10px;
+            }
+            
+            .lyric-line.active {
+                font-size: 1.4rem;
+            }
+            
+            .gallery-image {
+                width: 120px;
+                height: 120px;
+                position: relative;
+                margin: 10px auto;
+                display: block;
+                float: none !important;
+            }
+            
+            .lyric-with-image {
+                padding: 0 5%;
+                text-align: center;
+            }
+            
+            .song-title {
+                font-size: 1.1rem;
+                padding: 8px;
+            }
+            
+            .song-ending {
+                font-size: 0.8rem;
+                padding: 8px;
+            }
+            
+            .image-left, .image-right {
+                position: relative;
+                left: auto;
+                right: auto;
+                top: auto;
+                transform: none;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-teal fw-bold" href="../index.html">AIKKO</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="music.html">Музыка</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Галерея</a></li>
+                    <li class="nav-item"><a class="nav-link" href="concerts.html">Концерты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок песни сверху -->
+    <div class="song-title">
+        "Почему я тебя не ревную?" - Vlad Aikko
+    </div>
+
+    <div class="lyrics-container pt-5 mt-5">
+        <!-- Контент будет создан JavaScript -->
+    </div>
+
+    <!-- Завершение песни снизу -->
+    <div class="song-ending">
+        Конец композиции • Спасибо за прослушивание
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const lyrics = [
+            { text: "Думаешь небо устало держаться?" },
+            { text: "Или кажется, что нам не оставили шанса?" },
+            { text: "Ты на грани, когда я безучастно смотрю в глаза" },
+            { text: "И кажется что я чужой, дай отдышаться" },
+            { text: "Я ненавижу не вывозить, я трехлетней давности" },
+            { text: "Себе же дал бы щас пизды" },
+            { text: "Я распускаю сопли и руки, но слухи никогда не распускал" },
+            { text: "Собираю убеждения по кускам" },
+            { text: "Когда-то я был уверен, что знаю все о себе" },
+            { text: "Что знаю много всего и дальше будет веселей" },
+            { text: "Но я больше не напиваюсь, не клею твоих подруг" },
+            { text: "Я медленно умирал, пока не понял как я глуп" },
+            { text: "Всегда есть куда расти, но чем дальше тем трудней" },
+            { text: "Она была лучше во всем, признаюсь только себе" },
+            { text: "Тебе и так нелегко, я тебя зауважал" },
+            { text: "Но полюбить так и не смог, и теперь некуда бежать" },
+            { text: "Ты спросила, почему я тебя не ревную?" },
+            { text: "Мое солнце, я просто люблю другую" },
+            { text: "Я пытаюсь забыть ее" },
+            { text: "Чтобы у нас с тобой все получилось, но не могу" },
+            { text: "Ты спросила, почему я тебя не ревную?" },
+            { text: "Мое солнце, я просто люблю другую" },
+            { text: "Я пытаюсь забыть ее" },
+            { text: "Чтобы у нас с тобой все получилось, но не могу" },
+            { text: "Ты спросила почему, и развеялась пелена" },
+            { text: "Ты спросила почему, ведь стала что-то понимать" },
+            { text: "Мечта в твоих руках, но она больше не нужна тебе" },
+            { text: "Друзья как сторонние наблюдатели" },
+            { text: "С кем бы подраться, чтоб все беды разрешить" },
+            { text: "Я хочу как в восемнадцать не завидовать не жить, а так, перебиваться" },
+            { text: "Я залетный пассажир на этой людной станции" },
+            { text: "В моем доме ни души и я хочу остаться там" },
+            { text: "Извилистая темная тропа, моя везучая" },
+            { text: "Прими меня и робкого, и пьяного, и скучного" },
+            { text: "И странного, и глупого, и главное забудь меня" },
+            { text: "Когда я заблужусь и окончательно сверну" },
+            { text: "На свое кладбище безумия. Совсем не страшно" },
+            { text: "Рисую тебе образы, чтобы ты их изнашивала" },
+            { text: "Однажды все будет по-настоящему, а пока что" },
+            { text: "Ты спросила, почему я тебя не ревную?" },
+            { text: "Мое солнце, я просто люблю другую" },
+            { text: "Я пытаюсь забыть ее" },
+            { text: "Чтобы у нас с тобой все получилось, но не могу" },
+            { text: "Ты спросила, почему я тебя не ревную?" },
+            { text: "Мое солнце, я просто люблю другую" },
+            { text: "Я пытаюсь забыть ее" },
+            { text: "Чтобы у нас с тобой все получилось, но не могу" }
+        ];
+
+        // Добавь сюда больше фото - все будут разные!
+        const images = [
+            '../images/gallery1.jpg',
+            '../images/gallery2.jpg', 
+            '../images/gallery3.jpg',
+            '../images/gallery4.jpg',
+            '../images/gallery5.jpg',
+            '../images/gallery6.jpg',
+            '../images/gallery7.jpg',
+            '../images/gallery8.jpg',
+            '../images/gallery9.jpg',
+            '../images/gallery10.jpg',
+            '../images/gallery11.jpg',
+            '../images/gallery12.jpg'
+        ];
+
+        function createLyricsSection() {
+            const container = document.querySelector('.lyrics-container');
+            let imageIndex = 0;
+            let lastSide = 'left';
+
+            lyrics.forEach((lyric, index) => {
+                const lyricWithImage = document.createElement('div');
+                lyricWithImage.className = 'lyric-with-image';
+                
+                // Добавляем текст (всегда по центру)
+                const lyricElement = document.createElement('div');
+                lyricElement.className = `lyric-text lyric-line ${index === 0 ? 'active' : ''}`;
+                lyricElement.textContent = lyric.text;
+                lyricElement.dataset.index = index;
+                
+                lyricWithImage.appendChild(lyricElement);
+
+                // Добавляем фото по бокам (каждые 4-5 строк)
+                if ((index % 4 === 0 || index % 5 === 0) && images[imageIndex] && index > 1 && index < lyrics.length - 1) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = images[imageIndex];
+                    
+                    // Чередуем стороны
+                    const imgSide = lastSide === 'left' ? 'right' : 'left';
+                    lastSide = imgSide;
+                    
+                    imgElement.className = `gallery-image image-${imgSide}`;
+                    imgElement.alt = `Фото Aikko ${imageIndex + 1}`;
+                    
+                    lyricWithImage.appendChild(imgElement);
+                    imageIndex++;
+                    
+                    // Если фото закончились, начинаем сначала (но лучше добавить больше фото)
+                    if (imageIndex >= images.length) {
+                        imageIndex = 0;
+                    }
+                }
+
+                container.appendChild(lyricWithImage);
+            });
+        }
+
+        function handleScroll() {
+            const lyrics = document.querySelectorAll('.lyric-line');
+            const windowHeight = window.innerHeight;
+            
+            lyrics.forEach((lyric, index) => {
+                const rect = lyric.getBoundingClientRect();
+                const isActive = rect.top < windowHeight / 1.3 && rect.bottom > windowHeight / 4;
+                
+                // Первые 2 и последние 2 строки всегда видны
+                const isEdgeLine = index < 2 || index >= lyrics.length - 2;
+                
+                if (isEdgeLine) {
+                    lyric.classList.remove('faded');
+                    lyric.style.opacity = '1';
+                } else {
+                    lyric.classList.toggle('active', isActive);
+                    lyric.classList.toggle('faded', !isActive);
+                }
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createLyricsSection();
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+            
+            // Плавная прокрутка к началу при загрузке
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
