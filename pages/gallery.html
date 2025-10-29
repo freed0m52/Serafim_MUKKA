@@ -283,7 +283,7 @@
                 lyricWithImage.appendChild(lyricElement);
 
                 // Добавляем фото по бокам (каждые 4-5 строк)
-                if ((index % 4 === 0 || index % 5 === 0) && images[imageIndex] && index > 1 && index < lyrics.length - 1) {
+                if ((index % 6 === 0 || index % 7 === 0) && images[imageIndex] && index > 1 && index < lyrics.length - 1) {
                     const imgElement = document.createElement('img');
                     imgElement.src = images[imageIndex];
                     
