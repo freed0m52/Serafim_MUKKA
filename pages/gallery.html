@@ -86,7 +86,6 @@
             border-top: 1px solid #20c997;
         }
 
-        /* Компактное расположение */
         .lyric-with-image {
             position: relative;
             min-height: 50px;
@@ -112,7 +111,6 @@
             transform: translateY(-50%);
         }
 
-        /* Анимации для плавного появления */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -128,7 +126,6 @@
             animation: fadeInUp 0.4s ease-out;
         }
 
-        /* Адаптивность */
         @media (max-width: 768px) {
             .lyric-line {
                 font-size: 1.2rem;
@@ -274,7 +271,6 @@
                 const lyricWithImage = document.createElement('div');
                 lyricWithImage.className = 'lyric-with-image';
                 
-                // Добавляем текст (всегда по центру)
                 const lyricElement = document.createElement('div');
                 lyricElement.className = `lyric-text lyric-line ${index === 0 ? 'active' : ''}`;
                 lyricElement.textContent = lyric.text;
@@ -282,12 +278,10 @@
                 
                 lyricWithImage.appendChild(lyricElement);
 
-                // Добавляем фото по бокам (каждые 4-5 строк)
                 if ((index % 6 === 0 || index % 7 === 0) && images[imageIndex] && index > 1 && index < lyrics.length - 1) {
                     const imgElement = document.createElement('img');
                     imgElement.src = images[imageIndex];
                     
-                    // Чередуем стороны
                     const imgSide = lastSide === 'left' ? 'right' : 'left';
                     lastSide = imgSide;
                     
@@ -296,8 +290,6 @@
                     
                     lyricWithImage.appendChild(imgElement);
                     imageIndex++;
-                    
-                    // Если фото закончились, начинаем сначала (но лучше добавить больше фото)
                     if (imageIndex >= images.length) {
                         imageIndex = 0;
                     }
@@ -314,8 +306,7 @@
             lyrics.forEach((lyric, index) => {
                 const rect = lyric.getBoundingClientRect();
                 const isActive = rect.top < windowHeight / 1.3 && rect.bottom > windowHeight / 4;
-                
-                // Первые 2 и последние 2 строки всегда видны
+
                 const isEdgeLine = index < 2 || index >= lyrics.length - 2;
                 
                 if (isEdgeLine) {
@@ -327,14 +318,10 @@
                 }
             });
         }
-
-        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             createLyricsSection();
             window.addEventListener('scroll', handleScroll);
-            handleScroll(); // Initial check
-            
-            // Плавная прокрутка к началу при загрузке
+            handleScroll(); 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
