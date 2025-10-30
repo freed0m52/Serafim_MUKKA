@@ -27,9 +27,7 @@
     <div class="container py-5 mt-5">
         <h1 class="text-center mb-5">Дискография</h1>
         
-        <!-- All Albums Grid -->
         <div class="row g-4">
-            <!-- Album 1 -->
             <div class="col-md-3 col-sm-6" id="bekrums">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-bekrums.jpg" class="card-img-top" alt="Бэкрумс">
@@ -40,8 +38,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Album 2 -->
             <div class="col-md-3 col-sm-6" id="podvoh">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-podvoh.jpg" class="card-img-top" alt="Подвох">
@@ -52,8 +48,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 3 -->
             <div class="col-md-3 col-sm-6" id="predannye">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-predannye.jpg" class="card-img-top" alt="Преданные">
@@ -64,8 +58,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 4 -->
             <div class="col-md-3 col-sm-6" id="akustika">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-akustika.jpg" class="card-img-top" alt="Акустика">
@@ -76,8 +68,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 5 -->
             <div class="col-md-3 col-sm-6" id="temnye-delishki">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-temnye-delishki.jpg" class="card-img-top" alt="Тёмные делишки">
@@ -88,8 +78,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 6 -->
             <div class="col-md-3 col-sm-6" id="druzya">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-druzya.jpg" class="card-img-top" alt="Мои друзья не должны умирать">
@@ -100,8 +88,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 7 -->
             <div class="col-md-3 col-sm-6" id="chervi">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-chervi.jpg" class="card-img-top" alt="Черви в черепе">
@@ -112,8 +98,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 8 -->
             <div class="col-md-3 col-sm-6" id="ne-navsegda">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-ne-navsegda.jpg" class="card-img-top" alt="Не навсегда">
@@ -124,8 +108,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 9 -->
             <div class="col-md-3 col-sm-6" id="fiktsionalizm">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-fiktsionalizm.jpg" class="card-img-top" alt="Фикционализм">
@@ -136,8 +118,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 10 -->
             <div class="col-md-3 col-sm-6" id="tebe-prikolno">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-tebe-prikolno.jpg" class="card-img-top" alt="Тебе прикольно ещё жить">
@@ -148,8 +128,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 11 -->
             <div class="col-md-3 col-sm-6" id="boyus-ostyt">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-boyus-ostyt.jpg" class="card-img-top" alt="Боюсь остыть">
@@ -160,8 +138,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 12 -->
             <div class="col-md-3 col-sm-6" id="gori">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-gori.jpg" class="card-img-top" alt="Гори">
@@ -172,8 +148,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 13 -->
             <div class="col-md-3 col-sm-6" id="delayu-lyubov">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-delayu-lyubov.jpg" class="card-img-top" alt="Делаю любовь">
@@ -184,8 +158,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Album 14 -->
             <div class="col-md-3 col-sm-6" id="konfetti">
                 <div class="card bg-black text-light h-100 album-card">
                     <img src="../images/album-konfetti.jpg" class="card-img-top" alt="Конфетти">
@@ -197,8 +169,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Music Player Section -->
         <div class="row mt-5">
             <div class="col-lg-8 mx-auto">
                 <div class="card bg-black border-teal">
@@ -232,25 +202,19 @@
         let currentAudio = document.getElementById('audioPlayer');
         let isPlaying = false;
         function playAlbum(albumName, audioFile) {
-            // Останавливаем предыдущее воспроизведение
             currentAudio.pause();
             currentAudio.currentTime = 0;
             
-            // Устанавливаем источник аудио
             const audioPath = `../music/${audioFile}.mp3`;
             currentAudio.src = audioPath;
             
             document.getElementById('nowPlaying').textContent = 'Сейчас играет: ' + albumName;
             document.getElementById('albumInfo').textContent = 'Загрузка трека...';
-            
-            // Устанавливаем общее время
             const duration = trackDurations[audioFile] || 180;
             const minutes = Math.floor(duration / 60);
             const seconds = duration % 60;
             document.getElementById('totalTime').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
             document.getElementById('currentTime').textContent = '0:00';
-
-            // Обновляем кнопку
             const playButton = document.getElementById('playButton');
             playButton.innerHTML = '<i class="bi bi-play-fill"></i> Воспроизвести';
             playButton.classList.remove('btn-danger');
@@ -269,7 +233,6 @@
             const playButton = document.getElementById('playButton');
             
             if (!isPlaying) {
-                // Запускаем воспроизведение
                 currentAudio.play().then(() => {
                     playButton.innerHTML = '<i class="bi bi-pause-fill"></i> Пауза';
                     playButton.classList.remove('btn-teal');
@@ -281,7 +244,6 @@
                     alert('Ошибка при воспроизведении трека. Проверьте файл.');
                 });
             } else {
-                // Пауза
                 currentAudio.pause();
                 playButton.innerHTML = '<i class="bi bi-play-fill"></i> Продолжить';
                 playButton.classList.remove('btn-danger');
@@ -291,7 +253,6 @@
             }
         }
 
-        // Обновление времени воспроизведения
         currentAudio.addEventListener('timeupdate', function() {
             const currentTime = formatTime(currentAudio.currentTime);
             const duration = formatTime(currentAudio.duration);
@@ -299,14 +260,11 @@
             document.getElementById('currentTime').textContent = currentTime;
             document.getElementById('totalTime').textContent = duration;
             
-            // Обновление прогресс-бара
             const progress = (currentAudio.currentTime / currentAudio.duration) * 100;
             if (!isNaN(progress)) {
                 document.querySelector('.progress-bar').style.width = progress + '%';
             }
         });
-
-        // Когда трек закончился
         currentAudio.addEventListener('ended', function() {
             isPlaying = false;
             const playButton = document.getElementById('playButton');
@@ -323,8 +281,6 @@
             const sec = Math.floor(seconds % 60);
             return `${min}:${sec.toString().padStart(2, '0')}`;
         }
-
-        // Обработка ошибок загрузки
         currentAudio.addEventListener('error', function() {
             console.error('Ошибка загрузки аудио:', currentAudio.error);
             document.getElementById('albumInfo').textContent = 'Ошибка загрузки трека';
