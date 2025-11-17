@@ -4,102 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aikko - Официальный сайт</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles/custom.css">
-
-<class="bg-dark text-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
-        <div class="container">
-            <a class="navbar-brand text-teal fw-bold" href="index.html">AIKKO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/music.html">Музыка</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/gallery.html">Галерея</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/concerts.html">Концерты</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/contacts.html">Контакты</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 </head>
 <body>
-    <section class="hero-section min-vh-100 d-flex align-items-center">
+    <nav class="navbar">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand" href="index.html">AIKKO</a>
+            </div>
+
+            <button class="navbar-toggler" type="button" id="navbarToggler">
+                <i class="bi bi-list"></i>
+            </button>
+            
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/music.html">Музыка</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/gallery.html">Галерея</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/concerts.html">Концерты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h1 class="display-3 fw-bold mb-4">AIKKO</h1>
-                    <p class="lead mb-4 text-teal">Aikko не относит себя к жанру рэпа и считает, что границы направлений в искусстве давно размыты. Тексты его треков запомнились слушателям своей откровенностью и отсутствием «замыленных» тем про наркотики, деньги и алкоголь. </p>
+                    <h1 class="display-3">AIKKO</h1>
+                    <p class="lead text-teal">Aikko не относит себя к жанру рэпа и считает, что границы направлений в искусстве давно размыты. Тексты его треков запомнились слушателям своей откровенностью и отсутствием «замыленных» тем про наркотики, деньги и алкоголь.</p>
                     <div class="d-flex gap-3 flex-wrap">
                         <a href="pages/music.html" class="btn btn-teal btn-lg">Слушать музыку</a>
                         <a href="#about" class="btn btn-outline-teal btn-lg">Узнать больше</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <img src="images/aikko-main.jpg" alt="Vlad Aikko" class="img-fluid rounded hero-image">
+                    <img src="images/aikko-main.jpg" alt="Vlad Aikko" class="hero-image">
                 </div>
             </div>
         </div>
     </section>
-    <section id="about" class="py-5 bg-black">
+
+    <section id="about" class="bg-black about-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="mb-4">О музыканте</h2>
-                    <p class="lead mb-5">Настоящее имя рэпера — Владислав Кособуцкий, он родился 14 ноября 1993 года в Беларуси, в городе Бобруйске. Подробностей биографии исполнителя немного. Судя по тому, что первые треки появились в сети давно, можно предположить, что парень увлекается музыкой с детства.
-                    <div class="row mt-5">
-                        <div class="col-md-4 mb-4">
-                            <div class="card bg-dark border-teal h-100">
-                                <div class="card-body text-center">
-                                    <i class="bi bi-mic display-4 text-teal mb-3"></i>
-                                    <h5>Уникальный вокал</h5>
-                                    <p class="text-secondary">Узнаваемый тембр и эмоциональная подача</p>
-                                </div>
-                            </div>
+            <div class="about-content">
+                <h2 class="mb-4">О музыканте</h2>
+                <p class="lead mb-5">Настоящее имя рэпера — Владислав Кособуцкий, он родился 14 ноября 1993 года в Беларуси, в городе Бобруйске. Подробностей биографии исполнителя немного. Судя по тому, что первые треки появились в сети давно, можно предположить, что парень увлекается музыкой с детства.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-mic"></i>
                         </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card bg-dark border-teal h-100">
-                                <div class="card-body text-center">
-                                    <i class="bi bi-pencil display-4 text-teal mb-3"></i>
-                                    <h5>Глубокие тексты</h5>
-                                    <p class="text-secondary">Искренние истории и философские размышления</p>
-                                </div>
-                            </div>
+                        <h5>Уникальный вокал</h5>
+                        <p class="text-teal">Узнаваемый тембр и эмоциональная подача</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-pencil"></i>
                         </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card bg-dark border-teal h-100">
-                                <div class="card-body text-center">
-                                    <i class="bi bi-music-note-beamed display-4 text-teal mb-3"></i>
-                                    <h5>Атмосферный саунд</h5>
-                                    <p class="text-secondary">Меланхоличные биты и запоминающиеся аранжировки</p>
-                                </div>
-                            </div>
+                        <h5>Глубокие тексты</h5>
+                        <p class="text-teal">Искренние истории и философские размышления</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-music-note-beamed"></i>
                         </div>
+                        <h5>Атмосферный саунд</h5>
+                        <p class="text-teal">Меланхоличные биты и запоминающиеся аранжировки</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="py-5 bg-dark">
+
+    <section class="bg-dark">
         <div class="container">
             <h2 class="text-center mb-5">Популярные релизы</h2>
             <div class="row g-4">
                 <div class="col-md-3">
-                    <div class="card bg-black text-light h-100 album-card">
+                    <div class="card album-card h-100">
                         <img src="images/album-bekrums.jpg" class="card-img-top" alt="Бэкрумс">
                         <div class="card-body">
                             <h5 class="card-title">Бэкрумс</h5>
@@ -109,7 +104,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card bg-black text-light h-100 album-card">
+                    <div class="card album-card h-100">
                         <img src="images/album-podvoh.jpg" class="card-img-top" alt="Подвох">
                         <div class="card-body">
                             <h5 class="card-title">Подвох</h5>
@@ -119,7 +114,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card bg-black text-light h-100 album-card">
+                    <div class="card album-card h-100">
                         <img src="images/album-predannye.jpg" class="card-img-top" alt="Преданные">
                         <div class="card-body">
                             <h5 class="card-title">Преданные</h5>
@@ -129,7 +124,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card bg-black text-light h-100 album-card">
+                    <div class="card album-card h-100">
                         <img src="images/album-temnye-delishki.jpg" class="card-img-top" alt="Тёмные делишки">
                         <div class="card-body">
                             <h5 class="card-title">Тёмные делишки</h5>
@@ -144,12 +139,12 @@
             </div>
         </div>
     </section>
-</body>
-    <footer class="bg-black py-4 border-top border-teal">
+
+    <footer>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0 text-secondary">&copy; 2024 Vlad Aikko. Все права защищены.</p>
+                    <p class="mb-0 text-teal">&copy; 2024 Vlad Aikko. Все права защищены.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="pages/contacts.html" class="text-teal text-decoration-none me-3">Контакты</a>
@@ -159,13 +154,15 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Навигация для мобильных
+        document.getElementById('navbarToggler').addEventListener('click', function() {
+            document.getElementById('navbarNav').classList.toggle('show');
+        });
+
         function playAlbum(albumName) {
             alert('Воспроизведение альбома: ' + albumName + '\n\nПослушай лучшие треки с альбомов на следующей странице');
         }
     </script>
+</body>
 </html>
-
-
-
