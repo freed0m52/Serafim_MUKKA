@@ -4,373 +4,397 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Концерты - Aikko</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/custom.css">
+    <style>
+        .concerts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .concert-item {
+            background: var(--dark);
+            border: 1px solid var(--teal);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .concert-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(32, 201, 151, 0.2);
+        }
+        
+        .concert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .concert-date {
+            background: var(--teal);
+            color: var(--black);
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            text-align: center;
+            min-width: 80px;
+        }
+        
+        .concert-info {
+            flex: 1;
+            margin-left: 1.5rem;
+        }
+        
+        .concert-city {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+        
+        .concert-venue {
+            color: var(--teal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .concert-time {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .past-concerts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .past-concert {
+            background: var(--dark);
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .container.py-5.mt-5 {
+                padding-top: 2rem !important;
+                margin-top: 3rem !important;
+            }
+            
+            h1.text-center.mb-5 {
+                margin-bottom: 2rem !important;
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+            
+            .concerts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .concert-header {
+                flex-direction: column;
+            }
+            
+            .concert-info {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+            
+            .past-concerts {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1.text-center.mb-5 {
+                font-size: 1.7rem;
+                margin-bottom: 1.5rem !important;
+            }
+        }
+    </style>
 </head>
 <body class="bg-dark text-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand text-teal fw-bold" href="../index.html">AIKKO</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="music.html">Музыка</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Галерея</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="concerts.html">Концерты</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-                </ul>
-            </div>
+            <a class="navbar-brand" href="../index.html">AIKKO</a>
+            <button class="navbar-toggler" type="button" id="navbarToggler">
+                <i class="bi bi-list"></i>
+            </button>
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="music.html">Музыка</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Галерея</a></li>
+                <li class="nav-item"><a class="nav-link active" href="concerts.html">Концерты</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
         </div>
     </nav>
 
     <div class="container py-5 mt-5">
         <h1 class="text-center mb-5">Концерты</h1>
-        <div class="row mb-5">
-            <div class="col-12">
-                <h3 class="mb-4 border-bottom border-teal pb-2">Ближайшие выступления</h3>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">31</div>
-                                    <div class="small">ОКТЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Самара</h5>
-                                <p class="card-text text-teal">Клуб "Куйбышев"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Самара')">Купить билет</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="mb-5">
+            <h3 class="mb-4" style="border-bottom: 2px solid var(--teal); padding-bottom: 0.5rem;">Ближайшие выступления</h3>
             
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">1</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Казань</h5>
-                                <p class="card-text text-teal">Клуб "Reborn"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+            <div class="concerts-grid">
+                <!-- Концерт 1 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">31</div>
+                            <div style="font-size: 0.8rem;">ОКТЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Самара</div>
+                            <div class="concert-venue">Клуб "Куйбышев"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Самара')">Купить билет</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">2</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Пермь</h5>
-                                <p class="card-text text-teal">Клуб "Ё-бар"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+
+                <!-- Концерт 2 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">1</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Казань</div>
+                            <div class="concert-venue">Клуб "Reborn"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Казань')">Купить билет</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">4</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Екатеринбург</h5>
-                                <p class="card-text text-teal">Клуб "Нирвана"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+
+                <!-- Концерт 3 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">2</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Пермь</div>
+                            <div class="concert-venue">Клуб "Ё-бар"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Пермь')">Купить билет</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">5</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Тюмень</h5>
-                                <p class="card-text text-teal">Клуб "Цоколь"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+
+                <!-- Концерт 4 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">4</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Екатеринбург</div>
+                            <div class="concert-venue">Клуб "Нирвана"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Екатеринбург')">Купить билет</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">6</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Омск</h5>
-                                <p class="card-text text-teal">Клуб "Викинг"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+
+                <!-- Концерт 5 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">5</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Тюмень</div>
+                            <div class="concert-venue">Клуб "Цоколь"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Тюмень')">Купить билет</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">8</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Новосибирск</h5>
-                                <p class="card-text text-teal">Клуб "Подземка"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+
+                <!-- Концерт 6 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">6</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Омск</div>
+                            <div class="concert-venue">Клуб "Викинг"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Омск')">Купить билет</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">9</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Красноярск</h5>
-                                <p class="card-text text-teal">Клуб "Эрмитаж"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+
+                <!-- Концерт 7 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">8</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Новосибирск</div>
+                            <div class="concert-venue">Клуб "Подземка"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Новосибирск')">Купить билет</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">11</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Саратов</h5>
-                                <p class="card-text text-teal">Клуб "Machine head"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+
+                <!-- Концерт 8 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">9</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Красноярск</div>
+                            <div class="concert-venue">Клуб "Эрмитаж"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Красноярск')">Купить билет</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">12</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Волгоград</h5>
-                                <p class="card-text text-teal">Клуб "Ferrum"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+
+                <!-- Концерт 9 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">11</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Саратов</div>
+                            <div class="concert-venue">Клуб "Machine head"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Саратов')">Купить билет</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">13</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Воронеж</h5>
-                                <p class="card-text text-teal">Клуб "100 Ручьёв"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+
+                <!-- Концерт 10 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">12</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Волгоград</div>
+                            <div class="concert-venue">Клуб "Ferrum"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Волгоград')">Купить билет</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">14</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Ростов-на-Дону</h5>
-                                <p class="card-text text-teal">Клуб "Мёд"</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+
+                <!-- Концерт 11 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">13</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Воронеж</div>
+                            <div class="concert-venue">Клуб "100 Ручьёв"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Воронеж')">Купить билет</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-black text-light border-teal h-100">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-3 text-center">
-                                <div class="bg-teal text-dark rounded p-2">
-                                    <div class="fw-bold fs-5">16</div>
-                                    <div class="small">НОЯБРЯ</div>
-                                    <div class="small">2025</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <h5 class="card-title">Краснодар</h5>
-                                <p class="card-text text-teal">Sgt. Pepper's Bar</p>
-                                <small class="text-secondary">Начало в 20:00</small>
-                            </div>
-                            <div class="col-3 text-end">
-                                <button class="btn btn-teal btn-sm" onclick="buyTicket('Казань')">Купить билет</button>
-                            </div>
+
+                <!-- Концерт 12 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">14</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
                         </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Ростов-на-Дону</div>
+                            <div class="concert-venue">Клуб "Мёд"</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Ростов-на-Дону')">Купить билет</button>
+                    </div>
+                </div>
+
+                <!-- Концерт 13 -->
+                <div class="concert-item">
+                    <div class="concert-header">
+                        <div class="concert-date">
+                            <div style="font-size: 1.25rem; font-weight: bold;">16</div>
+                            <div style="font-size: 0.8rem;">НОЯБРЯ</div>
+                            <div style="font-size: 0.8rem;">2025</div>
+                        </div>
+                        <div class="concert-info">
+                            <div class="concert-city">Краснодар</div>
+                            <div class="concert-venue">Sgt. Pepper's Bar</div>
+                            <div class="concert-time">Начало в 20:00</div>
+                        </div>
+                        <button class="btn btn-teal" onclick="buyTicket('Краснодар')">Купить билет</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <h3 class="mb-4 border-bottom border-teal pb-2">Прошедшие концерты</h3>
-            </div>
 
-            <div class="col-md-4 mb-3">
-                <div class="card bg-black text-light border-secondary h-100">
-                    <div class="card-body text-center">
-                        <h6>24 ОКТЯБРЯ 2025</h6>
-                        <p class="text-teal">Москва</p>
-                        <p class="text-secondary small">Клуб "Графит"</p>
-                    </div>
+        <div>
+            <h3 class="mb-4" style="border-bottom: 2px solid var(--teal); padding-bottom: 0.5rem;">Прошедшие концерты</h3>
+            
+            <div class="past-concerts">
+                <div class="past-concert">
+                    <h6>24 ОКТЯБРЯ 2025</h6>
+                    <p class="text-teal">Москва</p>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Клуб "Графит"</p>
                 </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card bg-black text-light border-secondary h-100">
-                    <div class="card-body text-center">
-                        <h6>25 ОКТЯБРЯ 2025</h6>
-                        <p class="text-teal">Нижний Новгород</p>
-                        <p class="text-secondary small">Клуб "Nenavist'"</p>
-                    </div>
+                <div class="past-concert">
+                    <h6>25 ОКТЯБРЯ 2025</h6>
+                    <p class="text-teal">Нижний Новгород</p>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Клуб "Nenavist'"</p>
                 </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card bg-black text-light border-secondary h-100">
-                    <div class="card-body text-center">
-                        <h6>26 ОКТЯБРЯ 2024</h6>
-                        <p class="text-teal">Санкт-Петербург</p>
-                        <p class="text-secondary small">Клуб "Factory"</p>
-                    </div>
+                <div class="past-concert">
+                    <h6>26 ОКТЯБРЯ 2024</h6>
+                    <p class="text-teal">Санкт-Петербург</p>
+                    <p style="color: var(--gray); font-size: 0.9rem;">Клуб "Factory"</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function buyTicket(city) {
             alert('Покупка билета на концерт в ' + city + '\n\nКупи билеты на реальном сайте)');
         }
+
+        // Навигация для мобильных
+        document.getElementById('navbarToggler').addEventListener('click', function() {
+            document.getElementById('navbarNav').classList.toggle('show');
+        });
     </script>
 </body>
 </html>

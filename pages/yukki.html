@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЮККИ - Официальный сайт</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/custom.css">
+    <style>
+        .photo-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .main-photo {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .invisible-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: transparent; /* Полностью прозрачная */
+            border: none;
+            cursor: pointer;
+            opacity: 0; /* Полная невидимость */
+        }
+        .invisible-button:hover {
+            /* Можно оставить полностью невидимой или добавить едва заметный эффект */
+            background: rgba(139, 0, 0, 0.01);
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <div class="dropdown me-3">
+                    <a class="navbar-brand fw-bold dropdown-toggle" href="#" role="button" 
+                       data-bs-toggle="dropdown" aria-expanded="false" style="color: #8B0000;">
+                        ЮККИ
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li><a class="dropdown-item text-teal" href="../index.html">AIKKO</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-secondary" href="inspace.html">INSPACE</a></li>
+                        <li><a class="dropdown-item text-danger" href="katanacss.html">KATANACSS</a></li>
+                        <li><a class="dropdown-item text-light active" href="yukki.html" style="color: #8B0000;">ЮККИ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="yukki.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="yukki-music.html">Музыка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="yukki-bio.html">Биография</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="min-vh-100 d-flex align-items-center pt-5">
+        <div class="container">
+            <div class="photo-container">
+                <img src="../images/yukki-main.png" alt="ЮККИ" class="main-photo rounded">
+                <!-- Полностью невидимая круглая кнопка -->
+                <button class="invisible-button" onclick="location.href='yukki-special.html'" 
+                        title="Войти в мир ЮККИ"></button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

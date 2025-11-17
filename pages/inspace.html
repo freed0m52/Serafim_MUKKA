@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSPACE - Официальный сайт</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/custom.css">
+    <style>
+        .split-image-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .split-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+        .split-left, .split-right {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .split-left:hover, .split-right:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .split-left {
+            left: 0;
+        }
+        .split-right {
+            right: 0;
+        }
+        .split-text {
+            position: absolute;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        }
+        .split-left .split-text {
+            bottom: 0;
+            left: 0;
+        }
+        .split-right .split-text {
+            bottom: 0;
+            right: 0;
+        }
+        body {
+            background-color: #1a1a1a !important;
+        }
+        .navbar-brand {
+            color: #6c757d !important;
+        }
+        .btn-outline-gray {
+            border-color: #6c757d;
+            color: #6c757d;
+        }
+        .btn-outline-gray:hover {
+            background-color: #6c757d;
+            color: #000;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <div class="dropdown me-3">
+                    <a class="navbar-brand text-secondary fw-bold dropdown-toggle" href="#" role="button" 
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        INSPACE
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li><a class="dropdown-item text-teal" href="../index.html">AIKKO</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-light active" href="inspace.html">INSPACE</a></li>
+                        <li><a class="dropdown-item text-danger" href="katanacss.html">KATANACSS</a></li>
+                        <li><a class="dropdown-item" href="yukki.html" style="color: #8B0000;">ЮККИ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="inspace.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inspace-best-music.html">Лучшая музыка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inspace-44.html">Альбом "44"</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inspace-gallery.html">Галерея</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="min-vh-100 d-flex align-items-center pt-5">
+        <div class="container">
+            <div class="split-image-container">
+                <img src="../images/inspace-main.png" alt="INSPACE" class="split-image rounded">
+                <div class="split-left" onclick="location.href='inspace-best-music.html'">
+                    <div class="split-text">Лучшая музыка</div>
+                </div>
+                <div class="split-right" onclick="location.href='inspace-44.html'">
+                    <div class="split-text">Альбом "44"</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

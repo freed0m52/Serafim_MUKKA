@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лучшая музыка - INSPACE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/custom.css">
+    <style>
+        .track-card {
+            transition: transform 0.3s ease;
+            background: #2d2d2d !important;
+            border: 1px solid #444 !important;
+        }
+        .track-card:hover {
+            transform: translateY(-5px);
+            border-color: #6c757d !important;
+        }
+        .player-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid #6c757d;
+            z-index: 1000;
+        }
+        .collaboration-badge {
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            background-color: #6c757d !important;
+        }
+        .btn-gray {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+        }
+        .btn-gray:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+            color: white;
+        }
+        .btn-outline-gray {
+            border-color: #6c757d;
+            color: #6c757d;
+        }
+        .btn-outline-gray:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+        .text-gray {
+            color: #6c757d !important;
+        }
+        body {
+            background-color: #1a1a1a !important;
+        }
+        .playing {
+            border-color: #6c757d !important;
+            box-shadow: 0 0 10px rgba(108, 117, 125, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <div class="dropdown me-3">
+                    <a class="navbar-brand text-secondary fw-bold dropdown-toggle" href="#" role="button" 
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        INSPACE
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li><a class="dropdown-item text-teal" href="../index.html">AIKKO</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-light active" href="inspace.html">INSPACE</a></li>
+                        <li><a class="dropdown-item text-danger" href="katanacss.html">KATANACSS</a></li>
+                        <li><a class="dropdown-item" href="yukki.html" style="color: #8B0000;">ЮККИ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="inspace.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="inspace-best-music.html">Лучшая музыка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inspace-44.html">Альбом "44"</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inspace-gallery.html">Галерея</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5 mt-5">
+        <div class="container">
+            <h2 class="text-center mb-5 text-gray">Лучшие треки INSPACE</h2>
+            <div class="row g-4">
+                <!-- Трек 1: Терапия -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card text-light h-100 track-card" id="track-1">
+                        <div class="card-body">
+                            <h5 class="card-title">Терапия</h5>
+                            <p class="card-text text-gray">2024 • Сингл</p>
+                            <span class="badge collaboration-badge">
+                                совместно с <a href="../index.html" class="text-light text-decoration-none">AIKKO</a>
+                            </span>
+                            <button class="btn btn-gray btn-sm mt-3 w-100" onclick="playTrack(1)">
+                                <i class="bi bi-play-fill"></i> Слушать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Трек 2: Мерзость -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card text-light h-100 track-card" id="track-2">
+                        <div class="card-body">
+                            <h5 class="card-title">Мерзость</h5>
+                            <p class="card-text text-gray">2024 • Сингл</p>
+                            <button class="btn btn-gray btn-sm mt-3 w-100" onclick="playTrack(2)">
+                                <i class="bi bi-play-fill"></i> Слушать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Трек 3: Повод -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card text-light h-100 track-card" id="track-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Повод</h5>
+                            <p class="card-text text-gray">2023 • Сингл</p>
+                            <button class="btn btn-gray btn-sm mt-3 w-100" onclick="playTrack(3)">
+                                <i class="bi bi-play-fill"></i> Слушать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Трек 4: Кладовка -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card text-light h-100 track-card" id="track-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Кладовка</h5>
+                            <p class="card-text text-gray">2023 • Сингл</p>
+                            <button class="btn btn-gray btn-sm mt-3 w-100" onclick="playTrack(4)">
+                                <i class="bi bi-play-fill"></i> Слушать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Трек 5: 16 этаж -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card text-light h-100 track-card" id="track-5">
+                        <div class="card-body">
+                            <h5 class="card-title">16 этаж</h5>
+                            <p class="card-text text-gray">2023 • Сингл</p>
+                            <span class="badge collaboration-badge">
+                                совместно с <a href="katanacss.html" class="text-light text-decoration-none">KATANACSS</a>
+                            </span>
+                            <button class="btn btn-gray btn-sm mt-3 w-100" onclick="playTrack(5)">
+                                <i class="bi bi-play-fill"></i> Слушать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Трек 6: До скорого -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card text-light h-100 track-card" id="track-6">
+                        <div class="card-body">
+                            <h5 class="card-title">До скорого</h5>
+                            <p class="card-text text-gray">2023 • Сингл</p>
+                            <span class="badge collaboration-badge">
+                                совместно с <a href="katanacss.html" class="text-light text-decoration-none">KATANACSS</a>
+                            </span>
+                            <button class="btn btn-gray btn-sm mt-3 w-100" onclick="playTrack(6)">
+                                <i class="bi bi-play-fill"></i> Слушать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Трек 7: Татуировками -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card text-light h-100 track-card" id="track-7">
+                        <div class="card-body">
+                            <h5 class="card-title">Татуировками</h5>
+                            <p class="card-text text-gray">2022 • Сингл</p>
+                            <button class="btn btn-gray btn-sm mt-3 w-100" onclick="playTrack(7)">
+                                <i class="bi bi-play-fill"></i> Слушать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Трек 8: Потеряна -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card text-light h-100 track-card" id="track-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Потеряна</h5>
+                            <p class="card-text text-gray">2022 • Сингл</p>
+                            <button class="btn btn-gray btn-sm mt-3 w-100" onclick="playTrack(8)">
+                                <i class="bi bi-play-fill"></i> Слушать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Трек 9: Такси -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card text-light h-100 track-card" id="track-9">
+                        <div class="card-body">
+                            <h5 class="card-title">Такси</h5>
+                            <p class="card-text text-gray">2022 • Сингл</p>
+                            <button class="btn btn-gray btn-sm mt-3 w-100" onclick="playTrack(9)">
+                                <i class="bi bi-play-fill"></i> Слушать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Трек 10: Холодно -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card text-light h-100 track-card" id="track-10">
+                        <div class="card-body">
+                            <h5 class="card-title">Холодно</h5>
+                            <p class="card-text text-gray">2022 • Сингл</p>
+                            <button class="btn btn-gray btn-sm mt-3 w-100" onclick="playTrack(10)">
+                                <i class="bi bi-play-fill"></i> Слушать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Плеер в сером стиле -->
+    <div class="player-container py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div id="nowPlaying" class="text-gray">Выберите трек для воспроизведения</div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="d-flex justify-content-center align-items-center gap-3">
+                        <button class="btn btn-outline-gray btn-sm" onclick="previousTrack()">
+                            <i class="bi bi-skip-backward-fill"></i>
+                        </button>
+                        <button class="btn btn-gray" onclick="togglePlay()">
+                            <i class="bi bi-play-fill" id="playIcon"></i>
+                        </button>
+                        <button class="btn btn-outline-gray btn-sm" onclick="nextTrack()">
+                            <i class="bi bi-skip-forward-fill"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="progress" style="height: 5px; cursor: pointer; background-color: #444;" onclick="seekTrack(event)">
+                        <div class="progress-bar" id="progressBar" style="width: 0%; background-color: #6c757d;"></div>
+                    </div>
+                    <small class="text-secondary" id="timeDisplay">0:00 / 0:00</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Аудио элемент -->
+    <audio id="audioPlayer" preload="metadata"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        let currentTrackIndex = -1;
+        let isPlaying = false;
+        let progressInterval;
+
+        // Данные треков с реальными длительностями (в секундах)
+        const tracks = [
+            { 
+                id: 1,
+                name: 'Терапия', 
+                artist: 'INSPACE & AIKKO',
+                file: '../music/terapia.mp3',
+            },
+            { 
+                id: 2,
+                name: 'Мерзость', 
+                artist: 'INSPACE',
+                file: '../music/merzost.mp3',
+            },
+            { 
+                id: 3,
+                name: 'Повод', 
+                artist: 'INSPACE',
+                file: '../music/povod.mp3',
+            },
+            { 
+                id: 4,
+                name: 'Кладовка', 
+                artist: 'INSPACE',
+                file: '../music/kladovka.mp3',
+            },
+            { 
+                id: 5,
+                name: '16 этаж', 
+                artist: 'INSPACE & KATANACSS',
+                file: '../music/etaj.mp3',
+            },
+            { 
+                id: 6,
+                name: 'До скорого', 
+                artist: 'INSPACE & KATANACSS',
+                file: '../music/doskorogo.mp3',
+            },
+            { 
+                id: 7,
+                name: 'Татуировками', 
+                artist: 'INSPACE',
+                file: '../music/tatu.mp3',
+            },
+            { 
+                id: 8,
+                name: 'Потеряна', 
+                artist: 'INSPACE',
+                file: '../music/poteryana.mp3',
+            },
+            { 
+                id: 9,
+                name: 'Такси', 
+                artist: 'INSPACE',
+                file: '../music/taksi.mp3',
+            },
+            { 
+                id: 10,
+                name: 'Холодно', 
+                artist: 'INSPACE',
+                file: '../music/holodno.mp3',
+            }
+        ];
+
+        // Функция для форматирования времени
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Функция обновления прогресса
+        function updateProgress() {
+            if (audioPlayer.duration) {
+                const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                document.getElementById('progressBar').style.width = progress + '%';
+                
+                document.getElementById('timeDisplay').textContent = 
+                    `${formatTime(audioPlayer.currentTime)} / ${formatTime(audioPlayer.duration)}`;
+            }
+        }
+
+        // Воспроизведение трека
+        function playTrack(trackId) {
+            const trackIndex = trackId - 1;
+            
+            // Если это тот же трек, перезапускаем
+            if (currentTrackIndex === trackIndex && isPlaying) {
+                audioPlayer.currentTime = 0;
+                return;
+            }
+
+            // Снимаем выделение с предыдущего трека
+            if (currentTrackIndex !== -1) {
+                document.getElementById(`track-${currentTrackIndex + 1}`).classList.remove('playing');
+            }
+
+            currentTrackIndex = trackIndex;
+            const track = tracks[trackIndex];
+
+            // Устанавливаем источник аудио
+            audioPlayer.src = track.file;
+            
+            // Обновляем интерфейс
+            document.getElementById('nowPlaying').textContent = `${track.name} - ${track.artist}`;
+            document.getElementById(`track-${trackId}`).classList.add('playing');
+            
+            // Воспроизводим
+            audioPlayer.play();
+            isPlaying = true;
+            document.getElementById('playIcon').className = 'bi bi-pause-fill';
+
+            // Запускаем обновление прогресса
+            clearInterval(progressInterval);
+            progressInterval = setInterval(updateProgress, 1000);
+
+            // Устанавливаем длительность
+            audioPlayer.onloadedmetadata = function() {
+                document.getElementById('timeDisplay').textContent = 
+                    `0:00 / ${formatTime(audioPlayer.duration)}`;
+            };
+        }
+
+        // Пауза/воспроизведение
+        function togglePlay() {
+            if (currentTrackIndex === -1) return;
+
+            if (isPlaying) {
+                audioPlayer.pause();
+                document.getElementById('playIcon').className = 'bi bi-play-fill';
+            } else {
+                audioPlayer.play();
+                document.getElementById('playIcon').className = 'bi bi-pause-fill';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Следующий трек
+        function nextTrack() {
+            if (currentTrackIndex === -1) return;
+            
+            const nextIndex = (currentTrackIndex + 1) % tracks.length;
+            playTrack(nextIndex + 1);
+        }
+
+        // Предыдущий трек
+        function previousTrack() {
+            if (currentTrackIndex === -1) return;
+            
+            const prevIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+            playTrack(prevIndex + 1);
+        }
+
+        // Перемотка
+        function seekTrack(event) {
+            if (currentTrackIndex === -1) return;
+            
+            const progressBar = event.currentTarget;
+            const clickPosition = event.offsetX;
+            const progressBarWidth = progressBar.offsetWidth;
+            const seekPercentage = clickPosition / progressBarWidth;
+            
+            audioPlayer.currentTime = audioPlayer.duration * seekPercentage;
+            updateProgress();
+        }
+
+        // Обработчики событий аудио
+        audioPlayer.addEventListener('ended', function() {
+            isPlaying = false;
+            document.getElementById('playIcon').className = 'bi bi-play-fill';
+            document.getElementById('progressBar').style.width = '0%';
+            document.getElementById('timeDisplay').textContent = '0:00 / 0:00';
+            document.getElementById(`track-${currentTrackIndex + 1}`).classList.remove('playing');
+            
+            // Автопереход к следующему треку
+            setTimeout(nextTrack, 2000);
+        });
+
+        audioPlayer.addEventListener('timeupdate', updateProgress);
+
+        // Автоматически получаем длительность треков при загрузке
+        tracks.forEach((track, index) => {
+            const audio = new Audio();
+            audio.src = track.file;
+            audio.addEventListener('loadedmetadata', function() {
+                tracks[index].duration = audio.duration;
+            });
+        });
+    </script>
+</body>
+</html>
